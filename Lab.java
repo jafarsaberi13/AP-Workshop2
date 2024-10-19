@@ -1,5 +1,7 @@
+import java.util.ArrayList;
+
 public class Lab {
-    private Student[] students;
+    private ArrayList<Student> students;
     private String teacherName;
     // The day that class is held
     private String dayOfWeek;
@@ -14,15 +16,15 @@ public class Lab {
         this.maxSize = maxSize;
         // we make an array in size of maxsize
         // every roo of the array represent a student
-        students = new Student[maxSize];
+        students = new ArrayList<>();
     }
     // getters
     // setters
-    public Student[] getStudents() {
+    public ArrayList<Student> getStudents() {
         return students;
     }
 
-    public void setStudents(Student[] students) {
+    public void setStudents(ArrayList students) {
         this.students = students;
     }
 
@@ -64,5 +66,20 @@ public class Lab {
 
     public void setAvgGrade(double avgGrade) {
         this.avgGrade = avgGrade;
+    }
+    public void printLabInfo(Student obj) {
+        System.out.println("Teacher name: " + teacherName + "\nDay of class: " + dayOfWeek
+                + "\nMax size: " + maxSize + "\nCurrent size: " + currentSize
+                + "\n Average grade of class: " + avgGrade);
+        for (int i = 0; i < maxSize; i++) {
+            System.out.println(students.get(i).getFirstName() + " "+ students.get(i).getLastName());
+        }
+    }
+    public static void enrollStudent(Student obj, ArrayList students, int maxSize) {
+        for (int i = 0; i < maxSize; i++) {
+            if (students.get(i).equals(null)) {
+                students.add(obj);
+            }
+        }
     }
 }
