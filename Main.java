@@ -11,7 +11,7 @@ public class Main {
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Lab lab = new Lab("Foroghi", "saturday", 20);
+        Lab lab = new Lab("Foroghi", "Saturday", 20);
         int numberOfStudent = 0;
         while (true) {
             Student student = new Student();
@@ -40,7 +40,7 @@ public class Main {
                 }
             }
             else if (choice == 3) {
-                lab.printLabInfo(lab, numberOfStudent);
+                lab.printLabInfo(1.0, lab, numberOfStudent);
                 System.out.println("##### >>>  Student of the class  <<< #####");
                 for (int i = 0; i < numberOfStudent; i++) {
                     Student obj = lab.getStudents().get(i);
