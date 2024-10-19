@@ -5,5 +5,6 @@ public class Lab {
     private String dayOfWeek;
     private int maxSize;
     private int currentSize;
+    private double avgGrade;
     
 }
