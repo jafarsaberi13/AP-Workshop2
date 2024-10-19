@@ -76,8 +76,13 @@ public class Lab {
         }
         obj.setAvgGrade(total/currentSize);
     }
-    public void printLabInfo(Lab obj, int currentSize) {
-        obj.countAvgOfClass(obj, currentSize);
+    public void printLabInfo(double num, Lab obj, int currentSize) {
+        if (num == 1.0) {
+            obj.countAvgOfClass(obj, currentSize);
+        }
+        else {
+            obj.setAvgGrade(num);
+        }
         System.out.println("Teacher name: " + teacherName + "\nDay of class: " + dayOfWeek
                 + "\nMax size: " + maxSize + "\nCurrent size: " + currentSize
                 + "\n Average grade of class: " + avgGrade);
