@@ -8,9 +8,17 @@ public class Student {
     private double grade;
     private String fieldOfStudy;
 
-    // Constructor
+    // Constructors
+    // I added two constructor because there two Mian class one is I added the other is workshop homework
+    public Student(String firstName, String lastName, String id) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.id = id;
+        grade = 0;
+        fieldOfStudy = "Computer";
+    }
     public Student() {
-        this.grade = 0; //grade should be zero when the object created because every student has diffrent grades
+        grade = 0; //grade should be zero when the object created because every student has diffrent grades
     }
     // getters
     //setter
