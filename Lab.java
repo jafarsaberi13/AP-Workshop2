@@ -67,19 +67,22 @@ public class Lab {
     public void setAvgGrade(double avgGrade) {
         this.avgGrade = avgGrade;
     }
-    public void printLabInfo(Student obj) {
+    public void countAvgOfClass(Lab obj, int currentSize) {
+        double total = 0.0;
+        for (int i = 0; i < currentSize; i++) {
+            ArrayList<Student> st = obj.getStudents();
+            Student stu = st.get(i);
+            total += stu.getGrade();
+        }
+        obj.setAvgGrade(total/currentSize);
+    }
+    public void printLabInfo(Lab obj, int currentSize) {
+        obj.countAvgOfClass(obj, currentSize);
         System.out.println("Teacher name: " + teacherName + "\nDay of class: " + dayOfWeek
                 + "\nMax size: " + maxSize + "\nCurrent size: " + currentSize
                 + "\n Average grade of class: " + avgGrade);
-        for (int i = 0; i < maxSize; i++) {
-            System.out.println(students.get(i).getFirstName() + " "+ students.get(i).getLastName());
-        }
     }
-    public static void enrollStudent(Student obj, ArrayList students, int maxSize) {
-        for (int i = 0; i < maxSize; i++) {
-            if (students.get(i).equals(null)) {
-                students.add(obj);
-            }
-        }
+    public void enrollStudent(Student obj, ArrayList students) {
+        students.add(obj);
     }
 }
