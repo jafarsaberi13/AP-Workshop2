@@ -4,7 +4,7 @@
 public class Student {
     private String firstName;
     private String lastName;
-    private int id;
+    private String id;
     private double grade;
     private String fieldOfStudy;
 
@@ -38,12 +38,12 @@ public class Student {
         this.grade = grade;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
-        if (id >= 7) { // id should be at least 7
+    public void setId(String id) {
+        if (id.length() >= 7) { // id should be at least 7 digits
             this.id = id;
         }
     }
