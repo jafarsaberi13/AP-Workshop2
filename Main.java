@@ -18,25 +18,39 @@ public class Main {
             menu();
             int choice = scanner.nextInt();
             if (choice == 1) {
-                System.out.print("Enter the student name please  ");
+                scanner.nextLine();
+                System.out.println("Enter the student name please  ");
                 student.setFirstName(scanner.nextLine());
-                System.out.print("\nEnter the student lastname  please");
+                System.out.println("Enter the student lastname  please");
                 student.setLastName(scanner.nextLine());
-                System.out.print("\nEnter the student ID please ");
-                student.setId(scanner.nextInt());
-                System.out.println("\nEnter the student field of study please ");
+                System.out.println("Enter the student ID please ");
+                student.setId(scanner.next());
+                System.out.println("Enter the student field of study please ");
+                scanner.nextLine();
                 student.setFieldOfStudy(scanner.nextLine());
-                System.out.println("\nEnter the student grade please ");
+                System.out.println("Enter the student grade please ");
                 student.setGrade(scanner.nextDouble());
-                lab.enrollStudent(student, lab.getStudents(), 20);
                 numberOfStudent++;
+                lab.enrollStudent(student, lab.getStudents());
+                lab.setCurrentSize(numberOfStudent);
             }
             else if (choice == 2) {
                 for (int i = 0; i < numberOfStudent; i++) {
                     student.printStudentInfo(lab.getStudents().get(i));
                 }
             }
-
+            else if (choice == 3) {
+                lab.printLabInfo(lab, numberOfStudent);
+                System.out.println("##### >>>  Student of the class  <<< #####");
+                for (int i = 0; i < numberOfStudent; i++) {
+                    Student obj = lab.getStudents().get(i);
+                    System.out.println(obj.getFirstName() + " " + obj.getLastName());
+                }
+            }
+            else if (choice == 4) {
+                System.out.println("Program ended");
+                break;
+            }
         }
     }
 }
